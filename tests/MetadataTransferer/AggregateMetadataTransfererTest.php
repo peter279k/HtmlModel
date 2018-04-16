@@ -21,8 +21,9 @@ use Crell\HtmlModel\ScriptContainerInterface;
 use Crell\HtmlModel\StatusCodeContainerInterface;
 use Crell\HtmlModel\StyleContainerInterface;
 use Prophecy\Argument;
+use PHPUnit\Framework\TestCase;
 
-class AggregateMetadataTransfererTest extends \PHPUnit_Framework_TestCase
+class AggregateMetadataTransfererTest extends TestCase
 {
     public function testAggregateHandoff()
     {

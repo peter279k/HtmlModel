@@ -9,8 +9,9 @@ use Crell\HtmlModel\Head\ScriptElement;
 use Crell\HtmlModel\Head\StyleElement;
 use Crell\HtmlModel\Head\StyleLinkElement;
 use Crell\HtmlModel\HtmlPage;
+use PHPUnit\Framework\TestCase;
 
-class HtmlPageTest extends \PHPUnit_Framework_TestCase
+class HtmlPageTest extends TestCase
 {
     public function testConstructorContent()
     {
@@ -75,6 +76,10 @@ class HtmlPageTest extends \PHPUnit_Framework_TestCase
             ->withInlineStyle(new StyleElement('CSS here'))
             ->withContent('Body here')
         ;
+
+        $this->assertInstanceOf(HtmlPage::class, $html);
+        $this->assertEquals('Test page', $html->getTitle());
+        $this->assertEquals('Body here', $html->getContent());
     }
 
     public function testBase()
